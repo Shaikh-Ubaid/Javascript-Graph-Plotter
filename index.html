@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graph plotter</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<style>
+		*
+		{
+			margin:0;
+			padding:0; 
+		}
+		body
+		{
+			font-family: sans-serif;
+		}
+		.header
+		{
+			background-color: skyblue;
+			border-radius: 500px;
+			margin: 20px auto;
+			text-align: center;
+		}
+		body h3
+		{
+			margin: 20px auto;
+			text-align: center;
+		}
+		body input,button
+		{
+			width: 200px;
+			display: block;
+			margin:  3px auto;
+			padding: 8px;
+		}
+		.list
+		{
+			margin: 10px auto;
+			text-align: center;
+		}
+		.list li
+		{
+			margin: 10px 0px;
+			list-style: none;
+			
+		}
+		.content
+		{
+			width: 600px;
+			float: left;
+
+		}
+		#graph
+		{
+			width: 600px;
+			height: 550px;
+			background-color: lightblue;
+			float: left;
+			margin-left: 80px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h1 class="header">Graph Plotter</h1>
+		<h3>Select the type of graph</h3>
+		<ul class="list">
+			<li>Line</li>
+			<li>Bar Graph</li>
+			<li>Pie Chart</li>
+			<li>Histogram</li>
+			<li>Scatter</li>
+		</ul>
+		<input type="text" name="kind" placeholder="input a,b,c,d,e">
+		<h3>Input points on x-axis</h3>
+		<input type="text" class="Xpoints" name="field" placeholder="input x points">
+		<h3>Input points on y-axis</h3>
+		<input type="text" class="Ypoints" name="field" placeholder="input y points">
+		<button type="submit" onclick="plot_graph();" style="margin-top: 25px;">Plot Graph</button>
+	</div>
+	<div id="graph"></div>
+	<div style="clear: both;"></div>
+	<script type="text/javascript">
+		function plot_graph()
+		{
+			var Xpoints=JSON.parse("["+document.querySelector('.Xpoints').value+"]");
+			// var Xpoints=document.querySelector('.Xpoints').value.split(",");
+
+			var Ypoints=JSON.parse("["+document.querySelector('.Ypoints').value+"]");
+			Plotly.plot( graph, [{
+			x: Xpoints,
+			y: Ypoints,}], {
+			margin: { t: 0 } } );
+		}
+		
+	</script>
+</body>
+</html>
