@@ -1,0 +1,54 @@
+*
+{
+	margin:0;
+	padding:0; 
+}
+body
+{
+	font-family: sans-serif;
+}
+.header
+{
+	background-color: skyblue;
+	border-radius: 500px;
+	margin: 20px auto;
+	text-align: center;
+}
+body h3
+{
+	margin: 20px auto;
+	text-align: center;
+}
+body input,button
+{
+	width: 200px;
+	display: block;
+	margin:  3px auto;
+	padding: 8px;
+}
+.list
+{
+	margin: 10px auto;
+	text-align: center;
+}
+.list li
+{
+	margin: 10px 0px;
+	list-style: none;
+	
+}
+.content
+{
+	width: 600px;
+	float: left;
+
+}
+#graph
+{
+	width: 600px;
+	height: 550px;
+	background-color: lightblue;
+	float: left;
+	margin-left: 80px;
+	margin-top: 20px;
+}
